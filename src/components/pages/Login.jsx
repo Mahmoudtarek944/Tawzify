@@ -21,6 +21,10 @@ function Login() {
 
   // console.log(getUser());
 
+  if (!getUser()) {
+    handelRegister;
+  }
+
   const dataUser = {
     name: getUser().name,
     email: getUser().email,
