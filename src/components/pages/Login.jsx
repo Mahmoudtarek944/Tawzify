@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../utils/localStorage";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 function Login() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -18,15 +19,32 @@ function Login() {
   function handelHome() {
     naviageHome("/Home");
   }
+  const naviageHero = useNavigate();
+  function handelHero() {
+    naviageHero("/");
+  }
 
   // console.log(getUser());
 
   const user = getUser();
 
   useEffect(() => {
-    if (!user) {
-      handelRegister();
-    }
+    Swal.fire({
+      title: "Registration Required",
+      text: "You Didn't Have An Account , Please Create An Account",
+      icon: "error",
+      showCancelButton: true,
+      confirmButtonColor: "#0d6efd",
+      cancelButtonColor: "#6c757d",
+      confirmButtonText: "Registe Now",
+      cancelButtonText: "Later",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handelRegister();
+      } else if (result.isDismissed) {
+        handelHero();
+      }
+    });
   }, []);
 
   function validationForm(e) {
@@ -37,7 +55,7 @@ function Login() {
       emailRef.current.value === user.email &&
       passwordRef.current.value === user.password
     ) {
-      handelHome();
+      true;
     } else {
       formRef.current.className =
         "border border-2 border-danger shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center";
