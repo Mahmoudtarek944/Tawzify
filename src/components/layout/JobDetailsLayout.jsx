@@ -1,15 +1,13 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../share/Navbar";
-import SearchBar from "../share/SearchBar";
 
-function MainLayout() {
+function JobDetailsLayout() {
   return (
     <>
       <NavBar />
-      <SearchBar />
       <Outlet />
     </>
   );
 }
 
-export default MainLayout;
+export default JobDetailsLayout;

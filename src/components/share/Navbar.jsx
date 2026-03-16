@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 function NavBar() {
   return (
-    <Navbar expand="md" className=" py-3">
+    <Navbar expand="md" className="py-3">
       <Container className="d-flex align-items-center justify-content-between">
         <Navbar.Brand href="/" className=" fw-bold fs-4">
           Tawz<span className="text-primary">ify</span>

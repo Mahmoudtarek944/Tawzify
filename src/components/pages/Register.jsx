@@ -6,6 +6,8 @@ import {
 } from "../../../utils/validation";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 function Register() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -13,12 +15,19 @@ function Register() {
   const formRef = useRef(null);
   const btnRef = useRef(null);
 
+  const divParent = useRef(null);
+
   const naviage = useNavigate();
   function handelLogin() {
     naviage("/login");
   }
+  const naviageHome = useNavigate();
+  function handelHome() {
+    naviageHome("/home");
+  }
 
   function validationForm(e) {
+    e.preventDefault();
     if (
       expressionName(nameRef.current.value) &&
       expressionEmail.test(emailRef.current.value) &&
@@ -30,8 +39,26 @@ function Register() {
         password: passwordRef.current.value,
       };
       localStorage.setItem("user", JSON.stringify(user));
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      divParent.current.className = "opacity-50";
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      }).then(() => {
+        handelHome();
+      });
     } else {
-      e.preventDefault();
       formRef.current.className =
         "border border-2 border-danger shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center";
       btnRef.current.className = "btn btn-outline-danger";
@@ -39,7 +66,7 @@ function Register() {
   }
   return (
     <>
-      <div className="p-2 mt-5 form-height">
+      <div className="p-2 mt-5 form-height" ref={divParent}>
         <div
           className="cardForm border border-1 border-info shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center"
           ref={formRef}
@@ -86,7 +113,7 @@ function Register() {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-outline-primary"
+                  className="btn btn-secondary"
                   onClick={() => {
                     handelLogin();
                   }}
