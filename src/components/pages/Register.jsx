@@ -5,13 +5,18 @@ import {
   expressionPass,
 } from "../../../utils/validation";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
+import { useNavigate } from "react-router-dom";
 function Register() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const formRef = useRef(null);
   const btnRef = useRef(null);
+
+  const naviage = useNavigate();
+  function handelLogin() {
+    naviage("/login");
+  }
 
   function validationForm(e) {
     if (
@@ -75,10 +80,20 @@ function Register() {
                   }}
                 ></span>
               </div>
-
-              <button className="btn btn-outline-primary" ref={btnRef}>
-                Sign in
-              </button>
+              <div className=" d-flex justify-content-center gap-2">
+                <button className="btn btn-outline-primary" ref={btnRef}>
+                  Sign in
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary"
+                  onClick={() => {
+                    handelLogin();
+                  }}
+                >
+                  I have an Account
+                </button>
+              </div>
             </form>
           </div>
         </div>

@@ -29,22 +29,24 @@ function Login() {
   const user = getUser();
 
   useEffect(() => {
-    Swal.fire({
-      title: "Registration Required",
-      text: "You Didn't Have An Account , Please Create An Account",
-      icon: "error",
-      showCancelButton: true,
-      confirmButtonColor: "#0d6efd",
-      cancelButtonColor: "#6c757d",
-      confirmButtonText: "Registe Now",
-      cancelButtonText: "Later",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        handelRegister();
-      } else if (result.isDismissed) {
-        handelHero();
-      }
-    });
+    if (!user) {
+      Swal.fire({
+        title: "Registration Required",
+        text: "You Didn't Have An Account , Please Create An Account",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#0d6efd",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Create Now",
+        cancelButtonText: "Later",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          handelRegister();
+        } else if (result.isDismissed) {
+          handelHero();
+        }
+      });
+    }
   }, []);
 
   function validationForm(e) {

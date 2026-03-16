@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 function HeroPage() {
   const navigate = useNavigate();
-
+  function handelRegister() {
+    navigate("/register");
+  }
   const handleFindJob = () => {
     // console.log("click");
     Swal.fire({
@@ -18,7 +20,7 @@ function HeroPage() {
       cancelButtonText: "Later",
     }).then((result) => {
       if (result.isConfirmed) {
-        navigate("/login");
+        handelRegister();
       }
     });
   };
