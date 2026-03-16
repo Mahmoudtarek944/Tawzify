@@ -136,6 +136,8 @@
 
 .form-height {
   height: 75vh !important;
+  width: 50%;
+  margin: auto;
 }
 @media (max-width: 1024px) {
   .cards-wrapper {
@@ -182,6 +184,19 @@
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+  .form-height {
+    width: 90%;
+    margin: auto;
+    padding: 0% !important;
+  }
+  .cardForm {
+    width: 90% !important;
+    margin: auto;
+    padding: 0% !important;
+  }
+  .rotating-border-input {
+    width: 100% !important;
   }
 }
 @media (max-width: 380px) {

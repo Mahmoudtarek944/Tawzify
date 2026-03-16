@@ -2,7 +2,7 @@ import { useRef } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../utils/localStorage";
-
+import { useEffect } from "react";
 function Login() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -21,34 +21,33 @@ function Login() {
 
   // console.log(getUser());
 
-  if (!getUser()) {
-    handelRegister;
-  }
+  const user = getUser();
 
-  const dataUser = {
-    name: getUser().name,
-    email: getUser().email,
-    password: getUser().password,
-  };
+  useEffect(() => {
+    if (!user) {
+      handelRegister();
+    }
+  }, []);
 
   function validationForm(e) {
+    e.preventDefault();
+
     if (
-      nameRef.current.value === dataUser.name &&
-      emailRef.current.value === dataUser.email &&
-      passwordRef.current.value === dataUser.password
+      nameRef.current.value === user.name &&
+      emailRef.current.value === user.email &&
+      passwordRef.current.value === user.password
     ) {
-      handelHome;
+      handelHome();
     } else {
-      e.preventDefault();
       formRef.current.className =
         "border border-2 border-danger shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center";
+
       btnRef.current.className = "btn btn-outline-danger";
     }
   }
-
   return (
     <>
-      <div className="w-50 m-auto p-2 mt-5 form-height">
+      <div className=" p-2 mt-5 form-height">
         <div
           className="border border-1 border-info shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center"
           ref={formRef}
@@ -58,7 +57,6 @@ function Login() {
             <form
               className="d-flex flex-column gap-3 w-100 align-items-center"
               onSubmit={validationForm}
-              action="/Home"
             >
               <input
                 type="text"

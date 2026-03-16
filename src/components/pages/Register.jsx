@@ -34,9 +34,9 @@ function Register() {
   }
   return (
     <>
-      <div className="w-50 m-auto p-2 mt-5 form-height">
+      <div className="p-2 mt-5 form-height">
         <div
-          className="border border-1 border-info shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center"
+          className="cardForm border border-1 border-info shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center"
           ref={formRef}
         >
           <h3 className="fw-bold text-dark">Create New Account </h3>
