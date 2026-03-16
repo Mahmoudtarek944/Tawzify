@@ -57,7 +57,7 @@ function Login() {
       emailRef.current.value === user.email &&
       passwordRef.current.value === user.password
     ) {
-      true;
+      handelHome();
     } else {
       formRef.current.className =
         "border border-2 border-danger shadow-sm p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center text-capitalize text-center";
