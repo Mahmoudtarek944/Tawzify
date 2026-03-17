@@ -1,31 +1,55 @@
-# React + Vite
+# Tawzify — Job Finder Platform 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern job search platform that connects job seekers with remote opportunities worldwide.
 
-Currently, two official plugins are available:
+##  Live Demo
+[tawzify.vercel.app](https://tawzify.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+##  Features
+-  Authentication — Register & Login with local storage
+-  Browse Jobs — Live remote jobs from Remotive API
+-  Job Details — Full job description with apply link
+-  Save Jobs — Bookmark jobs for later
+-  Responsive Design — Works on all screen sizes
 
-## React Compiler
+##  Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Technology | Usage |
+|------------|-------|
+| React 18 | UI Framework |
+| Vite | Build Tool |
+| React Router | Client-side Routing |
+| Bootstrap 5 | Styling & Layout |
+| React Bootstrap | Bootstrap Components |
+| Axios | API Requests |
+| Bootstrap Icons | Icon Library |
 
-## Expanding the ESLint configuration
+##  API
+Jobs data is fetched from [Remotive API](https://remotive.com/api/remote-jobs) — a free remote jobs API.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Getting Started
+```bash
+# Clone the repo
+git clone https://github.com/Mahmoudtarek944/Tawzify.git
 
-Job Finder Platform
+# Install dependencies
+cd Tawzify
+npm install
 
-Built with:
-React
-Bootstrap
-Axios
-React Router
+# Run locally
+npm run dev
+```
 
-Features:
-Authentication
-Job search
-Job details page
-Save jobs
-Responsive design
+##  Project Structure
+```
+src/
+├── api/          # Axios API calls
+├── components/
+│   ├── layout/   # MainLayout & HeroLayout
+│   ├── pages/    # Home, JobDetails, Register, Login
+│   └── share/    # Navbar, Footer
+└── utils/        # Validation helpers
+```
+
+## 👨‍💻 Developer
+**Mahmoud Tarek** — Frontend Developer
