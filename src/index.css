@@ -389,3 +389,62 @@
 .nothing {
   height: 50vh;
 }
+.form {
+  height: 85vh !important;
+}
+#message {
+  resize: none;
+}
+.contact-divider {
+  width: 3em;
+  height: 3px;
+  background: #0d6efd;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 1.5em rgba(0, 0, 0, 0.06);
+}
+.contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4a5568;
+}
+.contact-input {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.contact-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+.contact-btn {
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 500;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.contact-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+@media (max-width: 768px) {
+  .contact {
+    width: 85% !important;
+  }
+  .form {
+    height: 100vh !important;
+  }
+}

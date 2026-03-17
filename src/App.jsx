@@ -10,6 +10,7 @@ import Footer from "./components/share/Footer";
 import JobDetails from "./components/pages/JobDetails";
 import JobDetailsLayout from "./components/layout/JobDetailsLayout";
 import Saved from "./components/pages/Saved";
+import Contact from "./components/pages/Contact";
 function App() {
   return (
     <>
@@ -27,10 +28,12 @@ function App() {
         <Route element={<JobDetailsLayout />}>
           <Route path="/job-details/:id" element={<JobDetails />} />
           <Route path="/saved" element={<Saved />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       <Footer />
     </>
   );
