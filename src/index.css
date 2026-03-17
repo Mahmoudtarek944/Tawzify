@@ -257,6 +257,20 @@
   font-weight: 600;
   color: #1a1f2e;
 }
+.save-icon {
+  transition: 0.3s !important;
+  padding: 0.3em 0.4em;
+  border: 0px;
+  border-radius: 0.4em;
+}
+.save-icon:hover {
+  background-color: #0a58ca !important;
+  color: white !important;
+}
+.saved-icon {
+  background-color: #0a58ca !important;
+  color: white !important;
+}
 .job-title {
   font-size: 0.95rem;
   font-weight: 600;
@@ -366,9 +380,12 @@
   .job-title-lg {
     font-size: 1.1rem;
   }
-
   .details-logo {
     width: 3em;
     height: 3em;
   }
+}
+
+.nothing {
+  height: 50vh;
 }

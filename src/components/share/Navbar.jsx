@@ -12,8 +12,7 @@ function NavBar() {
 
         <Navbar.Collapse id="navbarMain">
           <Nav className="ms-auto align-items-center gap-1 mt-3 mt-md-0">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/jobs">Browse Jobs</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/saved">
               <i className="bi bi-bookmark me-1"></i>Saved Jobs
             </Nav.Link>

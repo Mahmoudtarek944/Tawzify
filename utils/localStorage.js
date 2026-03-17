@@ -5,3 +5,11 @@ export function getUser() {
   }
   return JSON.parse(data);
 }
+
+export function getIdSaved() {
+  const ids = localStorage.getItem("savedJob");
+  if (!ids) {
+    return null;
+  }
+  return JSON.parse(ids);
+}
